@@ -1,43 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanmo Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VANMO — Tecnologia e Mobilidade Urbana</title>
+  <meta name="description" content="Integramos software avançado com micromobilidade elétrica para transformar cidades e empresas." />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to Vanmo</h1>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#mobility">Mobility</a></li>
-                <li><a href="#footer">Contact</a></li>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="VANMO">
+        <img src="https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1705321432434x319272373918909800/VanmoLogo.png" alt="VANMO Logo" />
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegação">
+        <a href="#sobre" data-scroll>Quem Somos</a>
+        <a href="#tecnologia" data-scroll>Tecnologia</a>
+        <a href="#mobilidade" data-scroll>Mobilidade</a>
+        <a href="#integracao" data-scroll>Integração</a>
+        <a href="#clientes" data-scroll>Para Quem</a>
+        <a href="#contato" data-scroll>Contato</a>
+      </nav>
+
+      <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="mobileMenu" aria-hidden="true">
+      <button class="nav-mobile-close" id="mobileMenuClose" aria-label="Fechar menu">
+        <i data-lucide="x"></i>
+      </button>
+      <nav class="nav-mobile-links" aria-label="Navegação móvel">
+        <a href="#sobre" data-scroll>Quem Somos</a>
+        <a href="#tecnologia" data-scroll>Tecnologia</a>
+        <a href="#mobilidade" data-scroll>Mobilidade</a>
+        <a href="#integracao" data-scroll>Integração</a>
+        <a href="#clientes" data-scroll>Para Quem</a>
+        <a href="#contato" data-scroll>Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Carousel (rendered by JS) -->
+    <section class="hero" id="hero" aria-label="Destaque"></section>
+
+    <!-- Quem Somos -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Quem Somos</h2>
+
+        <div class="lead text-center scroll-reveal delay-1">
+          <p>
+            A VANMO é uma empresa de tecnologia e mobilidade urbana focada em resolver problemas reais com soluções digitais rápidas, escaláveis e sustentáveis.
+          </p>
+          <p class="muted">
+            Atuamos na interseção entre software, smart cities e micromobilidade elétrica, ajudando organizações a inovar com eficiência, menor custo e maior impacto ambiental e social.
+          </p>
+        </div>
+
+        <div class="stats grid-3">
+          <div class="stat scroll-reveal delay-1">
+            <div class="stat-value"><span data-counter="50" data-suffix="+">0</span></div>
+            <div class="stat-label muted">Projetos Entregues</div>
+          </div>
+          <div class="stat scroll-reveal delay-2">
+            <div class="stat-value"><span data-counter="30" data-suffix="+">0</span></div>
+            <div class="stat-label muted">Clientes Atendidos</div>
+          </div>
+          <div class="stat scroll-reveal delay-3">
+            <div class="stat-value"><span data-counter="5" data-suffix="+">0</span></div>
+            <div class="stat-label muted">Anos de Experiência</div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card scroll-reveal delay-1">
+            <div class="card-icon"><i data-lucide="lightbulb"></i></div>
+            <h3>Inovação</h3>
+            <p class="muted">Soluções digitais rápidas e escaláveis</p>
+          </article>
+          <article class="card scroll-reveal delay-2">
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Eficiência</h3>
+            <p class="muted">Menor custo, maior impacto</p>
+          </article>
+          <article class="card scroll-reveal delay-3">
+            <div class="card-icon"><i data-lucide="leaf"></i></div>
+            <h3>Sustentabilidade</h3>
+            <p class="muted">Impacto ambiental e social positivo</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologia -->
+    <section id="tecnologia" class="section section-muted">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">
+          Desenvolvimento de Software<br />
+          <span class="typewriter typewriter-cursor" id="typewriter"></span>
+        </h2>
+        <p class="lead text-center muted scroll-reveal delay-1">
+          Criamos aplicações digitais de forma ágil, segura e escalável, reduzindo tempo de desenvolvimento e custo de operação.
+        </p>
+
+        <div class="grid-2">
+          <article class="card scroll-reveal delay-1">
+            <div class="card-icon"><i data-lucide="code"></i></div>
+            <h3>O que desenvolvemos</h3>
+            <ul class="checklist">
+              <li>Web Apps e Mobile Apps</li>
+              <li>Dashboards e painéis de dados</li>
+              <li>Sistemas de gestão (ERP, CRM, Eventos, Tickets)</li>
+              <li>Marketplaces e plataformas digitais</li>
+              <li>APIs, integrações e automações de processos</li>
             </ul>
+          </article>
+
+          <article class="card scroll-reveal delay-2">
+            <div class="card-icon"><i data-lucide="rocket"></i></div>
+            <h3>Por que Low Code & Vibe Code</h3>
+            <ul class="checklist alt">
+              <li>MVP funcional em semanas</li>
+              <li>Iteração rápida com o negócio</li>
+              <li>Menor custo de desenvolvimento</li>
+              <li>Escalável desde o primeiro dia</li>
+              <li>Ideal para startups, empresas e setor público</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/557734222807?text=Olá! Gostaria de desenvolver uma solução digital com a VANMO." target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle"></i>
+              Quero desenvolver uma solução digital
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobilidade -->
+    <section id="mobilidade" class="section">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">
+          Mobilidade Urbana com<br />
+          <span class="accent">Bikes Elétricas</span>
+        </h2>
+        <p class="lead text-center muted scroll-reveal delay-1">
+          Projetamos e implementamos soluções completas de micromobilidade elétrica, indo muito além da simples oferta de bicicletas.
+        </p>
+
+        <h3 class="subheading text-center scroll-reveal">Atendemos diversos setores</h3>
+        <div class="grid-3">
+          <article class="card text-center scroll-reveal delay-1">
+            <div class="card-icon"><i data-lucide="building-2"></i></div>
+            <h4>Mobilidade corporativa</h4>
+            <p class="muted">Soluções para deslocamento interno de colaboradores em grandes empresas e condomínios.</p>
+          </article>
+          <article class="card text-center scroll-reveal delay-2">
+            <div class="card-icon"><i data-lucide="landmark"></i></div>
+            <h4>Cidades e projetos públicos</h4>
+            <p class="muted">Sistemas de bike-sharing integrados a políticas públicas de mobilidade urbana.</p>
+          </article>
+          <article class="card text-center scroll-reveal delay-3">
+            <div class="card-icon"><i data-lucide="graduation-cap"></i></div>
+            <h4>Universidades e campi</h4>
+            <p class="muted">Mobilidade sustentável dentro de grandes campus universitários e centros de pesquisa.</p>
+          </article>
+        </div>
+
+        <div class="grid-2 narrow">
+          <article class="card text-center scroll-reveal delay-4">
+            <div class="card-icon"><i data-lucide="truck"></i></div>
+            <h4>Logística urbana de curta distância</h4>
+            <p class="muted">Bikes elétricas para entregas rápidas e sustentáveis em centros urbanos.</p>
+          </article>
+          <article class="card text-center scroll-reveal delay-5">
+            <div class="card-icon"><i data-lucide="globe"></i></div>
+            <h4>Turismo e economia sustentável</h4>
+            <p class="muted">Locação de bikes elétricas para turistas e projetos de turismo sustentável.</p>
+          </article>
+        </div>
+
+        <h3 class="subheading text-center scroll-reveal">O que entregamos</h3>
+        <article class="card narrow scroll-reveal delay-1">
+          <ul class="ticks">
+            <li><i data-lucide="check-circle-2"></i> Projetos de mobilidade urbana sustentável</li>
+            <li><i data-lucide="check-circle-2"></i> Frota de bikes elétricas</li>
+            <li><i data-lucide="check-circle-2"></i> Sistemas de gestão e monitoramento</li>
+            <li><i data-lucide="check-circle-2"></i> Integração com aplicativos e dashboards</li>
+            <li><i data-lucide="check-circle-2"></i> Modelos operacionais e de negócio</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="section section-muted">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Nosso Portfólio</h2>
+        <p class="lead text-center muted scroll-reveal delay-1">
+          Conheça alguns dos projetos que transformaram a realidade de nossos parceiros.
+        </p>
+
+        <div class="grid-3">
+          <article class="project scroll-reveal delay-1">
+            <div class="project-img">
+              <img src="https://placehold.co/600x400/5271ff/ffffff?text=App+Corporativo" alt="Sistema de Gestão de Frotas" />
+            </div>
+            <div class="project-body">
+              <span class="tag">Web App</span>
+              <h3>Sistema de Gestão de Frotas</h3>
+              <p class="muted">Plataforma completa para monitoramento em tempo real de bikes elétricas corporativas.</p>
+            </div>
+          </article>
+
+          <article class="project scroll-reveal delay-2">
+            <div class="project-img">
+              <img src="https://placehold.co/600x400/00bf8f/ffffff?text=Smart+City" alt="Cidade Conectada" />
+            </div>
+            <div class="project-body">
+              <span class="tag">Mobilidade</span>
+              <h3>Cidade Conectada</h3>
+              <p class="muted">Sistema de bike-sharing integrado com dashboard de indicadores urbanos em tempo real.</p>
+            </div>
+          </article>
+
+          <article class="project scroll-reveal delay-3">
+            <div class="project-img">
+              <img src="https://placehold.co/600x400/3a52b8/ffffff?text=Dashboard" alt="Painel Ambiental" />
+            </div>
+            <div class="project-body">
+              <span class="tag">Dashboard</span>
+              <h3>Painel Ambiental</h3>
+              <p class="muted">Dashboard de impacto ambiental com métricas de CO₂ evitado e quilômetros percorridos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integração -->
+    <section id="integracao" class="section section-muted">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Onde Tecnologia e Mobilidade se Encontram</h2>
+        <p class="lead text-center muted scroll-reveal delay-1">
+          O diferencial da VANMO é unir software + mobilidade urbana em soluções integradas.
+        </p>
+
+        <div class="grid-2 align-center">
+          <div class="scroll-reveal delay-1">
+            <h3 class="subheading">Exemplos práticos</h3>
+            <ul class="ticks">
+              <li><i data-lucide="check-circle-2"></i> Aplicativos para gestão de frota de bikes elétricas</li>
+              <li><i data-lucide="check-circle-2"></i> Dashboards com dados de uso e impacto ambiental</li>
+              <li><i data-lucide="check-circle-2"></i> Sistemas de reserva, tickets, acesso e controle</li>
+              <li><i data-lucide="check-circle-2"></i> Integração com QR Code, NFC, GPS e IoT</li>
+              <li><i data-lucide="check-circle-2"></i> Dados para tomada de decisão corporativa e pública</li>
+            </ul>
+            <p class="strong primary">Tudo pensado para escala, eficiência e impacto real.</p>
+          </div>
+
+          <div class="scroll-reveal delay-2">
+            <div class="callout">
+              <h3>Integração Completa</h3>
+              <div class="callout-icon"><i data-lucide="refresh-cw"></i></div>
+              <p class="callout-title">Software + Hardware + Dados</p>
+              <p class="muted on-dark">Conectamos todas as partes do ecossistema de mobilidade urbana em uma única plataforma inteligente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de Uso -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Casos de Uso</h2>
+        <div class="grid-3">
+          <article class="card text-center scroll-reveal delay-1">
+            <div class="card-icon"><i data-lucide="briefcase"></i></div>
+            <h3>Mobilidade corporativa</h3>
+            <p class="muted">Redução de custos com deslocamentos internos, dados de uso em tempo real e incentivo à cultura sustentável.</p>
+          </article>
+          <article class="card text-center scroll-reveal delay-2">
+            <div class="card-icon"><i data-lucide="building-2"></i></div>
+            <h3>Projetos urbanos e smart cities</h3>
+            <p class="muted">Soluções de micromobilidade integradas a sistemas digitais, com métricas claras de impacto ambiental e social.</p>
+          </article>
+          <article class="card text-center scroll-reveal delay-3">
+            <div class="card-icon"><i data-lucide="lightbulb"></i></div>
+            <h3>Startups e inovação</h3>
+            <p class="muted">MVPs rápidos para validar ideias, testar modelos de negócio e escalar soluções de mobilidade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para quem -->
+    <section id="clientes" class="section section-muted">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Para quem é a VANMO</h2>
+        <p class="lead text-center muted scroll-reveal delay-1">
+          Trabalhamos com organizações que buscam inovação prática e sustentável:
+        </p>
+
+        <div class="grid-3 cards-compact">
+          <div class="mini-card scroll-reveal delay-1"><i data-lucide="rocket"></i><span>Startups</span></div>
+          <div class="mini-card scroll-reveal delay-2"><i data-lucide="building-2"></i><span>Empresas</span></div>
+          <div class="mini-card scroll-reveal delay-3"><i data-lucide="landmark"></i><span>Prefeituras</span></div>
+          <div class="mini-card scroll-reveal delay-4"><i data-lucide="lightbulb"></i><span>Hubs de Inovação</span></div>
+          <div class="mini-card scroll-reveal delay-5"><i data-lucide="heart"></i><span>ONGs</span></div>
+          <div class="mini-card scroll-reveal delay-2"><i data-lucide="graduation-cap"></i><span>Universidades</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contato" class="section">
+      <div class="container">
+        <div class="cta scroll-reveal">
+          <h2>Vamos construir sua solução?</h2>
+          <p class="muted on-dark">
+            Seja um sistema digital, um projeto de mobilidade urbana ou a integração dos dois, a VANMO está pronta para ajudar.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/557734222807?text=Olá! Gostaria de agendar uma conversa sobre soluções da VANMO." target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle"></i>
+              Agendar uma conversa
+            </a>
+            <a class="btn btn-email" href="mailto:contato@vanmo.com.br?subject=Briefing para solução VANMO&body=Olá! Gostaria de enviar um briefing rápido para uma solução.">
+              <i data-lucide="mail"></i>
+              Enviar um briefing rápido
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1708346888193x561563388284187260/VANMO%20Logo-%20White.png" alt="VANMO Logo" />
+        <p class="footer-strong">Tecnologia • Mobilidade Urbana • Sustentabilidade</p>
+        <p class="footer-muted">Soluções digitais e físicas para um futuro mais inteligente e sustentável.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Links Rápidos</h3>
+        <nav class="footer-links">
+          <a href="#sobre" data-scroll>Quem Somos</a>
+          <a href="#tecnologia" data-scroll>Tecnologia Low-Code</a>
+          <a href="#mobilidade" data-scroll>Mobilidade Urbana</a>
+          <a href="#integracao" data-scroll>Integração</a>
+          <a href="#clientes" data-scroll>Para Quem</a>
         </nav>
-    </header>
-    <section id="hero">
-        <h2>Your Gateway to Innovation</h2>
-        <p>Explore our cutting-edge solutions and services.</p>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are leaders in tech innovations.</p>
-    </section>
-    <section id="technology">
-        <h2>Our Technology</h2>
-        <p>Utilizing the latest technologies to drive solutions.</p>
-    </section>
-    <section id="mobility">
-        <h2>Mobility Solutions</h2>
-        <p>Innovative mobility solutions at your service.</p>
-    </section>
-    <footer id="footer">
-        <p>&copy; 2026 Vanmo. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <div class="footer-contact">
+          <p><i data-lucide="message-circle"></i> WhatsApp: +55 (77) 3422-2807</p>
+          <p><i data-lucide="mail"></i> E-mail: contato@vanmo.com.br</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://wa.me/557734222807" target="_blank" rel="noopener noreferrer">Fale conosco pelo WhatsApp</a>
+          <a href="mailto:contato@vanmo.com.br">Envie um e-mail</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      © 2026 VANMO - Tecnologia e Mobilidade Urbana. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

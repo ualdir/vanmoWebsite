@@ -178,7 +178,7 @@
         title: 'Micromobilidade\nSustentável',
         lead: 'Soluções completas de bikes elétricas para corporações e cidades inteligentes.',
         buttons: [{ label: 'Conhecer Frotas', href: '#mobilidade', variant: 'primary' }],
-        image: 'https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1779132266065x567880602256696240/mobilidade_urbana.png?_gl=1*1itbwko*_gcl_au*Mjk1NjgxMTM5LjE3NzkxMzIyMDY.*_ga*NjYxMzUwMDgzLjE2Mzg3ODYzNTA.*_ga_BFPVR2DEE2*czE3NzkxMTMyMTAkbzE2OCRnMSR0MTc3OTEzMjI1NSRqOCRsMCRoMA..',
+        image: 'https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1779132991161x578960874727091600/mobilidade_urbana.png',
         alt: 'Mobilidade Urbana',
       },
     ];

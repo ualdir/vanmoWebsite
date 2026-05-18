@@ -171,7 +171,7 @@
         title: 'Desenvolvimento\nLow Code & Vibe Code',
         lead: 'Aplicações rápidas, seguras e escaláveis para acelerar o seu negócio.',
         buttons: [{ label: 'Nossas Soluções', href: '#tecnologia', variant: 'primary' }],
-        image: 'https://placehold.co/600x400/00bf8f/ffffff?text=Software+House',
+        image: 'https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1779132991161x578960874727091600/mobilidade_urbana.png',
         alt: 'Desenvolvimento de Software',
       },
       {

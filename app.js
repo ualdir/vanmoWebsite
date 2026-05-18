@@ -164,7 +164,7 @@
           { label: 'Começar Agora', href: '#contato', variant: 'primary' },
           { label: 'Saiba Mais', href: '#tecnologia', variant: 'outline' },
         ],
-        image: 'https://placehold.co/600x400/5271ff/ffffff?text=Tecnologia+%2B+Mobilidade',
+        image: 'https://a2a72a46d46e34e29a926782f6e7c690.cdn.bubble.io/f1779133784671x378673972880295230/Gemini_Generated_Image_m133nsm133nsm133.png',
         alt: 'VANMO Tech e Mobilidade',
       },
       {

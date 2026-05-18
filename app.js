@@ -171,14 +171,14 @@
         title: 'Desenvolvimento\nLow Code & Vibe Code',
         lead: 'Aplicações rápidas, seguras e escaláveis para acelerar o seu negócio.',
         buttons: [{ label: 'Nossas Soluções', href: '#tecnologia', variant: 'primary' }],
-        image: '/assets/software_house.png',
+        image: 'https://placehold.co/600x400/00bf8f/ffffff?text=Software+House',
         alt: 'Desenvolvimento de Software',
       },
       {
         title: 'Micromobilidade\nSustentável',
         lead: 'Soluções completas de bikes elétricas para corporações e cidades inteligentes.',
         buttons: [{ label: 'Conhecer Frotas', href: '#mobilidade', variant: 'primary' }],
-        image: 'https://placehold.co/600x400/3a52b8/ffffff?text=Bikes+Eletricas',
+        image: 'https://raw.githubusercontent.com/ualdir/vanmoWebsite/refs/heads/main/assets/mobilidade_urbana.png',
         alt: 'Mobilidade Urbana',
       },
     ];

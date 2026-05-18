@@ -171,7 +171,7 @@
         title: 'Desenvolvimento\nLow Code & Vibe Code',
         lead: 'Aplicações rápidas, seguras e escaláveis para acelerar o seu negócio.',
         buttons: [{ label: 'Nossas Soluções', href: '#tecnologia', variant: 'primary' }],
-        image: 'assets/software_house.png',
+        image: '/assets/software_house.png',
         alt: 'Desenvolvimento de Software',
       },
       {

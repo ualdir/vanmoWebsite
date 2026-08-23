@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 
 <head>
   <meta charset="utf-8" />
@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 
 <body>
@@ -40,14 +41,14 @@
 
   <main id="main">
     <section class="page-hero thanks-hero">
-      <div class="container" style="text-align: center;">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.2); margin-bottom: 24px;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <div class="container">
+        <div class="thanks-icon">
+          <i data-lucide="check"></i>
         </div>
         <span class="eyebrow">Obrigado</span>
         <h1>Recebemos seu contato.</h1>
         <p>Analisaremos as informações enviadas e entraremos em contato.</p>
-        <div class="hero-actions" style="justify-content: center; margin-top: 24px;">
+        <div class="thanks-actions">
           <a class="btn btn-primary" href="/"><i data-lucide="arrow-left"></i> Voltar para a Home</a>
           <a class="btn btn-outline" href="/solucoes/">Conhecer soluções</a>
         </div>

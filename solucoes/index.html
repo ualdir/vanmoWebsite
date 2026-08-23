@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 
 <head>
   <meta charset="utf-8" />
@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
+  <script>document.documentElement.classList.remove('no-js');</script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -97,6 +98,8 @@
       </div>
     </section>
 
+    <hr class="section-divider" />
+
     <section id="conectar" class="section">
       <div class="container split">
         <div class="scroll-reveal">
@@ -114,6 +117,8 @@
       </div>
     </section>
 
+    <hr class="section-divider" />
+
     <section id="operar" class="section">
       <div class="container">
         <div class="section-intro scroll-reveal">
@@ -129,6 +134,8 @@
         <div class="center-action scroll-reveal"><a class="btn btn-primary" href="/contato/?necessidade=producao"><i data-lucide="cloud-cog"></i> Preciso colocar ou melhorar minha aplicação em produção</a></div>
       </div>
     </section>
+
+    <hr class="section-divider" />
 
     <section id="consultoria" class="section">
       <div class="container split">
@@ -189,7 +196,7 @@
   <div class="nav-mobile" id="mobileMenu" aria-hidden="true">
     <nav class="nav-mobile-links" aria-label="Navegação móvel">
       <button class="nav-mobile-close" id="mobileMenuClose" aria-label="Fechar menu"><i data-lucide="x"></i></button>
-      <a href="/">Home</a><a href="/solucoes/">Soluções</a><a href="/cases/">Cases</a><a href="/sobre/">Sobre</a><a href="/contato/">Contato</a>
+      <a href="/">Home</a><a class="active" href="/solucoes/">Soluções</a><a href="/cases/">Cases</a><a href="/sobre/">Sobre</a><a href="/contato/">Contato</a>
     </nav>
   </div>
 

@@ -58,20 +58,54 @@
   /* ================================================================
      Mobile Menu
      ================================================================ */
+  let lastFocusedEl = null;
+
+  function getFocusable(container) {
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+  }
+
   function openMobileMenu() {
     if (!mobileMenu || !mobileBtn) return;
+    lastFocusedEl = document.activeElement;
     mobileMenu.classList.add('open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     mobileBtn.setAttribute('aria-expanded', 'true');
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    if (sbw > 0) {
+      document.body.style.paddingRight = sbw + 'px';
+      if (header) header.style.paddingRight = sbw + 'px';
+    }
     document.body.style.overflow = 'hidden';
+    const focusable = getFocusable(mobileMenu);
+    if (focusable.length) focusable[0].focus();
   }
 
   function closeMobileMenu() {
     if (!mobileMenu || !mobileBtn) return;
+    if (!mobileMenu.classList.contains('open')) return;
     mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
     mobileBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    if (header) header.style.paddingRight = '';
+    if (lastFocusedEl) lastFocusedEl.focus();
+  }
+
+  function trapFocus(e) {
+    if (!mobileMenu?.classList.contains('open')) return;
+    if (e.key !== 'Tab') return;
+    const focusable = getFocusable(mobileMenu);
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   mobileBtn?.addEventListener('click', openMobileMenu);
@@ -82,6 +116,7 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
+    trapFocus(e);
   });
 
   /* ================================================================
@@ -121,6 +156,11 @@
     });
   } else {
     const revealEls = Array.from(document.querySelectorAll('.scroll-reveal'));
+    revealEls.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+        el.classList.add('visible');
+      }
+    });
     const revealObs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -131,7 +171,9 @@
       },
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => {
+      if (!el.classList.contains('visible')) revealObs.observe(el);
+    });
   }
 
   /* ================================================================
@@ -174,7 +216,6 @@
       const lastRect = lastStep.getBoundingClientRect();
 
       const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
       const firstCenter = firstRect.top + firstRect.height / 2 - sectionTop;
       const lastCenter = lastRect.top + lastRect.height / 2 - sectionTop;
 
@@ -188,6 +229,12 @@
     }
 
     window.addEventListener('scroll', updateLineFill, { passive: true });
+    window.addEventListener('resize', updateLineFill, { passive: true });
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(updateLineFill);
+      ro.observe(processSection);
+      steps.forEach((s) => ro.observe(s));
+    }
     updateLineFill();
   })();
 
